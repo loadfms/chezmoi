@@ -1,6 +1,6 @@
 {
     //--------------------------------------------------------------------------------
-    //    General
+    // General
     //--------------------------------------------------------------------------------
     "layer": "top",
     "position": "top",
@@ -11,7 +11,7 @@
     "margin-bottom": 0,
     "margin-right": 26,
     //--------------------------------------------------------------------------------
-    //    Left Modules
+    // Left Modules
     //--------------------------------------------------------------------------------
     "modules-left": [
         "custom/luck",
@@ -19,13 +19,13 @@
         "hyprland/workspaces"
     ],
     //--------------------------------------------------------------------------------
-    //    Center Modules
+    // Center Modules
     //--------------------------------------------------------------------------------
     "modules-center": [
         "custom/kuwabara"
     ],
     //--------------------------------------------------------------------------------
-    //    Right Modules
+    // Right Modules
     //--------------------------------------------------------------------------------
     "modules-right": [
         // "custom/music",
@@ -33,10 +33,13 @@
         "network",
         "cpu",
         "temperature",
-        "memory"
+        "memory",
+        {{ if eq .chezmoi.hostname "archnote" }}
+            "battery"
+        {{ end }}
     ],
     //--------------------------------------------------------------------------------
-    //    Left Configuration
+    // Left Configuration
     //--------------------------------------------------------------------------------
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -58,12 +61,12 @@
         }
     },
     "clock": {
-        "format": "{:%d-%m-%Y  | %I:%M}",
+        "format": "{:%d-%m-%Y | %I:%M}",
         "tooltip-format": "{:%A}",
         "on-click": "galendae"
     },
     //--------------------------------------------------------------------------------
-    //    Right Configuration
+    // Right Configuration
     //--------------------------------------------------------------------------------
     "memory": {
         "interval": 1,
@@ -100,7 +103,7 @@
         "escape": true,
         "interval": 5,
         "tooltip": false,
-        "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+        "exec": {{ printf "\"playerctl metadata --format '{{ artist }} - {{ title }}'\"" }},
         "on-click": "playerctl play-pause",
         "max-length": 30
     },
@@ -108,5 +111,17 @@
         "exec": "echo 'くわばらくわばら'",
         "interval": 999999,
         "tooltip": false
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} ⏳",
+        "interval": 30
     }
 }

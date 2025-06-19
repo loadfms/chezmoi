@@ -93,12 +93,13 @@ window#waybar {
 
 #temperature,
 #memory,
-#pulseaudio {
+#pulseaudio,
+#battery{
   padding-left: 1em;
   padding-right: 0.5em;
 }
 
-#memory {
+#battery {
   margin-right: 1em;
 }
 
