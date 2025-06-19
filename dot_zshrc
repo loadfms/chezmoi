@@ -116,13 +116,13 @@ alias git-clean-branches="git branch --merged | grep -v \* | xargs git branch -D
 alias git-undo="git reset HEAD~1 --soft"
 alias git-lastag="git describe --abbrev=0 --tags"
 alias git-tag="git_release"
-alias git-revert="sh ~/.dotfiles/scripts/git-revert.sh"
+alias git-revert="sh ~/scripts/git-revert.sh"
 alias vim=nvim
 alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | pbcopy -selection clipboard"
-alias dotsync="sh ~/.dotfiles/scripts/revive-packages.sh && git -C ~/.dotfiles add . && git -C ~/.dotfiles commit -m 'feat: update' && git -C ~/.dotfiles push origin main"
+alias dotsync="sh ~/scripts/revive-packages.sh && git -C ~/.dotfiles add . && git -C ~/.dotfiles commit -m 'feat: update' && git -C ~/.dotfiles push origin main"
 alias ls="eza --icons -ll --sort=type --header"
 alias ps="procs"
-alias mypr="sh ~/.dotfiles/scripts/myprs.sh"
+alias mypr="sh ~/scripts/myprs.sh"
 alias rgf='rg --files --no-ignore --hidden | rg -i '
 alias tmux='tmux attach -t TMUX || tmux new -s TMUX'
 alias dockerstart='sudo systemctl start docker.service'
@@ -130,8 +130,8 @@ alias prj='list_projects'
 alias mini-chrome="google-chrome-stable --new-window --app="
 alias cgpt='git commit -m "$(commitgpt)"'
 alias awslogs='aws_logs'
-alias ssm-gen='sh ~/.dotfiles/scripts/ssm_gen.sh'
-alias ssm-get='sh ~/.dotfiles/scripts/get_ssm.sh'
+alias ssm-gen='sh ~/scripts/ssm_gen.sh'
+alias ssm-get='sh ~/scripts/get_ssm.sh'
 alias reset-wifi='nmcli --ask connection up internet-5g'
 
 alias fzf="fzf --preview='chafa {}'"
@@ -192,7 +192,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 ###############################################################
 #pokemon-colorscripts -r 1 --no-title
 
-source ~/.dotfiles/scripts/set_secrets.sh
+source ~/scripts/set_secrets.sh
 neofetch
 
 # pnpm
