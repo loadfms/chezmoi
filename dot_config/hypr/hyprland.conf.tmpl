@@ -57,8 +57,12 @@ $calendar = galendae
 # exec-once = nm-applet &
 # exec-once = waybar & hyprpaper & firefox
 exec-once = waybar
+
+{{ if eq .chezmoi.hostname "archnote" }}
 exec-once = wbg ~/pictures/leaves-wall.png
-# exec-once = wbg ~/pictures/gruvbox-wallpapers/wallpapers/irl/clay-banks-Jya99orvzSE.jpg
+{{ else if eq .chezmoi.hostname "desktop" }}
+exec-once = wbg ~/pictures/gruvbox-wallpapers/wallpapers/irl/clay-banks-Jya99orvzSE.jpg
+{{ end }}
 
 
 #############################
