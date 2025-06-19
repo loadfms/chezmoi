@@ -1,14 +1,14 @@
 local keymap = vim.api.nvim_set_keymap
 local ns = { noremap = true, silent = true }
 
-keymap('n', '<Leader>w', ':w<CR>', ns)                                      -- Fast save
-keymap('n', '<Leader>qa', ':qa<CR>', ns)                                    -- Fast save
-keymap('n', '<Leader>ep', ':e ~/.config/nvim/lua/plugins/init.lua<CR>', ns) -- Open config
-keymap('n', '<Leader>bd', ':bd<CR>', ns)                                    -- Close buffer
+keymap('n', '<Leader>w', ':w<CR>', ns)                                                              -- Fast save
+keymap('n', '<Leader>qa', ':qa<CR>', ns)                                                            -- Fast save
+keymap('n', '<Leader>ep', ':e ~/.local/share/chezmoi/dot_config/nvim/lua/plugins/init.lua<CR>', ns) -- Open config
+keymap('n', '<Leader>bd', ':bd<CR>', ns)                                                            -- Close buffer
 keymap("n", "<A-TAB>", "<C-^>", ns)
-keymap('n', 'Y', 'y$', ns)                                                  -- Yank from the cursor to the end of line
-keymap('n', 'Q', '<Nop>', ns)                                               -- Disable ex mode. I dunno what is it
-keymap('n', '<Leader><CR>', ':noh<CR>', ns)                                 -- Clear highlight
+keymap('n', 'Y', 'y$', ns)                                                                          -- Yank from the cursor to the end of line
+keymap('n', 'Q', '<Nop>', ns)                                                                       -- Disable ex mode. I dunno what is it
+keymap('n', '<Leader><CR>', ':noh<CR>', ns)                                                         -- Clear highlight
 keymap('', ']b', ':bnext<CR>', ns)
 keymap('', '[b', ':bprevious<CR>', ns)
 keymap('', ']q', ':cnext<CR>', ns)
