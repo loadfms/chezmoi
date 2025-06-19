@@ -119,7 +119,7 @@ alias git-tag="git_release"
 alias git-revert="sh ~/scripts/git-revert.sh"
 alias vim=nvim
 alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | pbcopy -selection clipboard"
-alias dotsync="sh ~/scripts/revive-packages.sh && git -C ~/.dotfiles add . && git -C ~/.dotfiles commit -m 'feat: update' && git -C ~/.dotfiles push origin main"
+alias dotsync="git -C ~/.local/share/chezmoi/ add . && git -C ~/.local/share/chezmoi/ commit -m 'feat: update configs' && git -C ~/.local/share/chezmoi/ push origin main"
 alias ls="eza --icons -ll --sort=type --header"
 alias ps="procs"
 alias mypr="sh ~/scripts/myprs.sh"
