@@ -1,0 +1,112 @@
+{
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+    "margin-top": 26,
+    "margin-left": 26,
+    "margin-bottom": 0,
+    "margin-right": 26,
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+        "custom/luck",
+        "clock",
+        "hyprland/workspaces"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [
+        "custom/kuwabara"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+        // "custom/music",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "temperature",
+        "memory"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "disable-select-unfocused": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        }
+    },
+    "clock": {
+        "format": "{:%d-%m-%Y  | %I:%M}",
+        "tooltip-format": "{:%A}",
+        "on-click": "galendae"
+    },
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+    "cpu": {
+        "format": "{usage:3}% ",
+        "interval": 1
+    },
+    "temperature": {
+        "interval": 1,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            ""
+        ]
+    },
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "󱘖",
+        "tooltip-format": "{essid} {ipaddr}/{cidr} "
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume:3}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                " "
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/music": {
+        "format": "うた {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 30
+    },
+    "custom/kuwabara": {
+        "exec": "echo 'くわばらくわばら'",
+        "interval": 999999,
+        "tooltip": false
+    }
+}

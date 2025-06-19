@@ -1,0 +1,102 @@
+* {
+    bg:            #2d353b;
+    fg:            #d3c6aa;
+    bg-alt:        #a7c080;
+    accent:        #D8A657;
+
+    borderradius:  0px;
+    bordersize:    1px;
+    bordercolor:   @fg;
+
+    highlight:     #475258;
+
+    width: 600;
+    font: "Maple Mono NF 10";
+}
+
+element-text,
+element-icon,
+mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    border: @bordersize;
+    border-color: @bordercolor;
+    background-color: @bg;
+    border-radius: @borderradius;
+}
+
+mainbox {
+    background-color: @bg;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @highlight;
+    padding: 6px;
+    text-color: @bg;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @fg;
+    background-color: @bg;
+}
+
+listview {
+    border: 0;
+    padding: 6px;
+    margin: 10px 20px;
+    columns: 1;
+    lines: 5;
+    background-color: @bg;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @highlight;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @bg;
+    text-color: @accent;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @bg;
+    text-color: @highlight;
+}

@@ -1,0 +1,23 @@
+[user]
+	email = loadfms@gmail.com
+	name = loadfms
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
+[init]
+	defaultBranch = main
+[merge]
+	tool = fugitive
+[difftool "nvimdiff"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool]
+	keepBackup = false
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/

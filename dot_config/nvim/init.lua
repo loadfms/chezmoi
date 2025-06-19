@@ -1,0 +1,6 @@
+require('config.options')
+require('config.lazy')
+require('config.keymaps')
+require('core.lsp')
+require('config.theme')
+require('config.statusline').setup()
