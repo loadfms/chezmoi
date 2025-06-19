@@ -12,10 +12,8 @@ chezmoi init --apply loadfms/chezmoi
 ```
 
 Esse comando:
-
-    Clona o repo https://github.com/loadfms/chezmoi
-
-    Aplica todos os arquivos no seu $HOME
+- Clona o repo https://github.com/loadfms/chezmoi
+- Aplica todos os arquivos no seu $HOME
 
 ## Para testar antes de aplicar (opcional)
 
