@@ -1,6 +1,5 @@
 return {
     -- Theme
-    { "sainnhe/gruvbox-material" },
     {
         "neanias/everforest-nvim",
         version = false,

@@ -16,7 +16,11 @@ live_config_reload = true
 import = ["~/.config/alacritty/alacrittythemes/everforest.toml"]
 
 [font]
+{{ if eq .chezmoi.hostname "MacBookPro" }}
+size = 15.0
+{{ else }}
 size = 12.0
+{{ end }}
 
 [font.bold]
 family = "Maple Mono NF"
