@@ -18,22 +18,22 @@
     frame_width = 2
 
 [urgency_low]
-    background = "#282828"
-    foreground = "#EBDBB2"
+    background = "#2d353b"
+    foreground = "#d3c6aa"
     frame_color = "#1B1B1B"
     timeout = 5
     format = "<b><span color='#7DAEA3'>%s</span></b>\n%b"
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#EBDBB2"
+    background = "#2d353b"
+    foreground = "#d3c6aa"
     frame_color = "#1B1B1B"
     format = "<b><span color='#A9B665'>%s</span></b>\n%b"
     timeout = 10
 
 [urgency_critical]
-    background = "#282828"
-    foreground = "#EBDBB2"
+    background = "#2d353b"
+    foreground = "#d3c6aa"
     frame_color = "#1B1B1B"
     highlight = "#EA6962"
     timeout = 5
