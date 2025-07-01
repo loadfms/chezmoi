@@ -19,18 +19,6 @@ return {
         config = function()
             local copilot = require("copilot")
 
-            -- Get the built-in accept function
-            local accept_fn = require("copilot.suggestion").accept
-
-            -- Create a wrapper that accepts then inserts a newline
-            local function accept_and_newline()
-                accept_fn()
-                -- Schedule the newline to avoid interfering with the accept behavior
-                vim.schedule(function()
-                    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
-                end)
-            end
-
             copilot.setup({
                 suggestion = {
                     enabled = true,
@@ -38,15 +26,12 @@ return {
                     debounce = 75,
                     hide_during_completion = false,
                     keymap = {
-                        accept = "<C-j>",
+                        accept = "<C-CR>",
                         accept_word = false,
                         accept_line = false,
                     },
                 },
             })
-
-            -- Override the default <C-j> mapping
-            vim.keymap.set("i", "<C-j>", accept_and_newline, { desc = "Copilot Accept + Newline" })
         end,
     },
 
