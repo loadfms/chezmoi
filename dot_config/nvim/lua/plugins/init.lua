@@ -26,7 +26,7 @@ return {
                     debounce = 75,
                     hide_during_completion = false,
                     keymap = {
-                        accept = "<C-CR>",
+                        accept = "<C-j>",
                         accept_word = false,
                         accept_line = false,
                     },
