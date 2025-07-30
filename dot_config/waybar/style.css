@@ -3,7 +3,7 @@
  *-------------------------------------------------------------------------------*/
 
 @define-color bg           #2d353b;
-@define-color bg-alpha     rgba(45, 53, 59, 0.3);
+@define-color bg-alpha     rgba(45, 53, 59, 0.5);
 @define-color fg           #d3c6aa;
 @define-color accent       #a7c080;
 @define-color separator    #d3c6aa;
