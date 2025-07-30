@@ -20,8 +20,6 @@ window#waybar {
   background-color: @bg;
   color: @fg;
   border:0;
-  border-top: 0;
-  border-bottom: 0;
 }
 
 /*--------------------------------------------------------------------------------
@@ -34,23 +32,15 @@ window#waybar {
   border-top: 0;
   border-bottom: 0;
 }
+.modules-left { }
 
-.modules-left {
-  border-left: 2px solid;
-  border-color: @bg;
-}
-
-.modules-right {
-  border-right: 2px solid;
-  border-color: @bg;
-}
+.modules-right { }
 
 /*--------------------------------------------------------------------------------
  * Left Modules 
  *-------------------------------------------------------------------------------*/
 
 #workspaces {
-  background-color: @bg;
   color: @fg;
   padding-left: 1em;
 }
@@ -77,7 +67,6 @@ window#waybar {
 }
 
 #clock {
-  background-color: @bg;
   padding: 0 1em;
   border-right: 2px solid @separator;
 }
