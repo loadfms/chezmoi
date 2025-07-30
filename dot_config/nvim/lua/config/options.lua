@@ -16,7 +16,7 @@ opt.synmaxcol = 240
 opt.mouse = ''
 
 -- Editor
-opt.number = true
+opt.number = false
 opt.wrap = false
 opt.signcolumn = 'yes'
 opt.showmatch = true
@@ -34,7 +34,7 @@ opt.smartindent = true
 opt.shortmess:append { c = true }
 opt.ignorecase = true
 opt.smartcase = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.scrolloff = 9999
 opt.guicursor = ""
 opt.termguicolors = true
