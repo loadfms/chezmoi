@@ -11,9 +11,9 @@ fi
 
 prep() {
     # Verifica se a interface normal existe
-    echo "[*] Procurando interface $INTERFACE..."
+    echo "[-] Procurando interface $INTERFACE..."
     if iw dev | grep -qw "$INTERFACE"; then
-        echo "[*] Interface normal $INTERFACE encontrada. Ativando modo monitor..."
+        echo "[-] Interface normal $INTERFACE encontrada. Ativando modo monitor..."
         sudo airmon-ng start "$INTERFACE" >/dev/null 2>&1
 
         # Agora tenta capturar a interface em modo monitor
@@ -39,7 +39,7 @@ prep() {
 }
 
 scan_bssid() {
-    echo "[*] Escaneando redes (30s) para encontrar SSID '$SSID'..."
+    echo "[-] Escaneando redes (30s) para encontrar SSID '$SSID'..."
     sudo airodump-ng "$INTERFACE_MON" --band a -w scan5g --output-format csv > /dev/null 2>&1 &
     PID=$!
     sleep 30
@@ -61,7 +61,7 @@ scan_bssid() {
 }
 
 create_filter() {
-    echo "[*] Criando filtro BPF..."
+    echo "[-] Criando filtro BPF..."
     BSSID_FILTER=$(echo "$BSSID" | tr -d ':' | tr 'A-F' 'a-f')
     sudo tcpdump -s 65535 -y IEEE802_11_RADIO \
       "wlan addr3 $BSSID_FILTER or wlan addr3 ffffffffffff" \
@@ -72,12 +72,12 @@ create_filter() {
 }
 
 get_handshake() {
-    echo "[*] Capturando handshake..."
+    echo "[-] Capturando handshake..."
     sudo hcxdumptool -i "$INTERFACE_MON" -c "${CHANNEL}b" --bpf=attack.bpf -w dumpfile.pcapng
 }
 
 extract_hash() {
-    echo "[*] Extraindo hash..."
+    echo "[-] Extraindo hash..."
     sleep 1
     hcxpcapngtool -o hash.hc22000 dumpfile.pcapng
     print_green "[*] Hash extraído com sucesso: hash.hc22000"
@@ -85,14 +85,14 @@ extract_hash() {
 
 reset_interface() {
     if [[ "$INTERFACE_MON" == *mon ]]; then
-        echo "[*] Parando modo monitor na interface $INTERFACE_MON..."
+        echo "[-] Parando modo monitor na interface $INTERFACE_MON..."
         sudo airmon-ng stop "$INTERFACE_MON"
         
-        echo "[*] Tentando reativar interface $INTERFACE..."
+        echo "[-] Tentando reativar interface $INTERFACE..."
         sudo ip link set "$INTERFACE" up
 
     else
-        echo "[*] Interface $INTERFACE_MON não está em modo monitor, nada a resetar."
+        echo "[-] Interface $INTERFACE_MON não está em modo monitor, nada a resetar."
     fi
 }
 
