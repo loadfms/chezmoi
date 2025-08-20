@@ -190,12 +190,8 @@ return {
         version = '*',
         opts = {
             cmdline = {
-                keymap = {
-                    preset = 'enter', -- preset for enter-based completion acceptance
-                    ['<Tab>'] = { 'select_next', 'fallback' },
-                    ['<S-Tab>'] = { 'select_prev', 'fallback' },
-                    ['<C-Space>'] = { 'show', 'fallback' }, -- explicitly trigger completion if not visible
-                },
+                keymap = { preset = 'inherit' },
+                completion = { menu = { auto_show = true } },
             },
             keymap = {
                 preset = 'enter',
