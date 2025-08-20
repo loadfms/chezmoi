@@ -190,8 +190,10 @@ return {
         version = '*',
         opts = {
             cmdline = {
-                keymap = { preset = 'inherit' },
-                completion = { menu = { auto_show = true } },
+                keymap = {
+                    preset = 'inherit',
+                },
+                completion = { menu = { auto_show = false } },
             },
             keymap = {
                 preset = 'enter',
