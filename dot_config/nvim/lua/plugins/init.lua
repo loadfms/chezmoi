@@ -24,7 +24,7 @@ return {
                     enabled = true,
                     auto_trigger = true,
                     debounce = 75,
-                    hide_during_completion = false,
+                    hide_during_completion = true,
                     keymap = {
                         accept = "<C-j>",
                         accept_word = false,
