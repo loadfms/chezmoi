@@ -189,12 +189,7 @@ return {
         event = "InsertEnter", -- Load when entering Insert mode
         version = '*',
         opts = {
-            cmdline = {
-                keymap = {
-                    preset = 'inherit',
-                },
-                completion = { menu = { auto_show = false } },
-            },
+            cmdline = { enabled = false },
             keymap = {
                 preset = 'enter',
                 ['<Tab>'] = { 'select_next', 'fallback' },
