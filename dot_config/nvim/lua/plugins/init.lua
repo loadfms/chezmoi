@@ -244,5 +244,17 @@ return {
             },
         },
         opts_extend = { "sources.default" }
-    }
+    },
+    {
+        "olimorris/codecompanion.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        cmd = { "CodeCompanion", "CodeCompanionChat" },
+        opts = {
+            opts = {
+                log_level = "DEBUG", -- or "TRACE"
+            },
+        },
+    },
 }
