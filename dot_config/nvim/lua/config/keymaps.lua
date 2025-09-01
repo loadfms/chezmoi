@@ -64,6 +64,3 @@ keymap("v", "<leader>cc", "gc", { desc = "Toggle comment" })
 --keymap("n", "<C-j>", ':lua require("harpoon.ui").nav_file(2)<CR>', ns)
 --keymap("n", "<C-k>", ':lua require("harpoon.ui").nav_file(3)<CR>', ns)
 --keymap("n", "<C-l>", ':lua require("harpoon.ui").nav_file(4)<CR>', ns)
-
--- Jumps to matching pair
-keymap("n", "mm", "%", { desc = "Jump to matching pair" })
