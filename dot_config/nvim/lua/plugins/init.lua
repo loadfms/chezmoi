@@ -18,28 +18,28 @@ return {
         event = "InsertEnter",
         config = function()
             local copilot = require("copilot")
+            local suggestion = require("copilot.suggestion")
 
             copilot.setup({
+                panel = { enabled = false },
                 suggestion = {
                     enabled = true,
-                    auto_trigger = true,
-                    debounce = 75,
-                    hide_during_completion = true,
+                    auto_trigger = false, -- não dispara sozinho
                     keymap = {
-                        accept = "<C-j>",
+                        accept = "<C-l>", -- aceita a sugestão
                         accept_word = false,
                         accept_line = false,
+                        next = "<C-j>",
+                        prev = "<C-k>",
+                        dismiss = nil,
                     },
                 },
             })
         end,
     },
 
-    -- Git Integration
-    {
-        'tpope/vim-fugitive',
-        cmd = { 'G', 'Git', 'Gdiffsplit', 'Gvdiffsplit' }, -- lazy-load on Git commands }, -- make sure these are registered
-    },
+
+    -- Git Signs
     {
         'lewis6991/gitsigns.nvim',
         cmd = "Git",
@@ -91,36 +91,6 @@ return {
         'stevearc/oil.nvim',
         cmd = "Oil",
         opts = {}
-    },
-    {
-        "ibhagwan/fzf-lua",
-        cmd = "FzfLua",
-        -- dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            winopts    = {
-                border   = "single",
-                preview  = {
-                    border = "single",
-                },
-                backdrop = 100,
-            },
-            files      = {
-                rg_opts = [[--files --hidden --glob !.git --glob !node_modules]]
-            },
-            grep       = {
-                rg_opts =
-                "--color=never --no-heading --with-filename --line-number --column --smart-case --glob !node_modules",
-            },
-            previewers = {
-                builtin = {
-
-                    syntax_limit_b = 1024 * 100, -- 100KB
-                    extensions = {
-                        ["jpg"] = { "chafa", "{file}" },
-                    },
-                }
-            }
-        }
     },
 
     -- Treesitter (Syntax highlighting, etc.)
@@ -240,4 +210,40 @@ return {
         },
         opts_extend = { "sources.default" }
     },
+    -- Git Integration
+    -- {
+    --     'tpope/vim-fugitive',
+    --     cmd = { 'G', 'Git', 'Gdiffsplit', 'Gvdiffsplit' }, -- lazy-load on Git commands }, -- make sure these are registered
+    -- },
+    --
+    -- {
+    --     "ibhagwan/fzf-lua",
+    --     cmd = "FzfLua",
+    --     -- dependencies = { "nvim-tree/nvim-web-devicons" },
+    --     opts = {
+    --         winopts    = {
+    --             border   = "single",
+    --             preview  = {
+    --                 border = "single",
+    --             },
+    --             backdrop = 100,
+    --         },
+    --         files      = {
+    --             rg_opts = [[--files --hidden --glob !.git --glob !node_modules]]
+    --         },
+    --         grep       = {
+    --             rg_opts =
+    --             "--color=never --no-heading --with-filename --line-number --column --smart-case --glob !node_modules",
+    --         },
+    --         previewers = {
+    --             builtin = {
+    --
+    --                 syntax_limit_b = 1024 * 100, -- 100KB
+    --                 extensions = {
+    --                     ["jpg"] = { "chafa", "{file}" },
+    --                 },
+    --             }
+    --         }
+    --     }
+    -- },
 }
