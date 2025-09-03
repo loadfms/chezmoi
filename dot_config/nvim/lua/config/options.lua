@@ -40,3 +40,7 @@ opt.guicursor = ""
 opt.termguicolors = true
 opt.fillchars = { eob = " " }
 opt.foldlevel = 99
+
+-- Opções
+opt.wildmenu = true
+opt.wildmode = "noselect:longest:lastused,full"
