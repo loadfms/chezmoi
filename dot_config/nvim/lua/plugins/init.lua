@@ -210,40 +210,34 @@ return {
         },
         opts_extend = { "sources.default" }
     },
-    -- Git Integration
-    -- {
-    --     'tpope/vim-fugitive',
-    --     cmd = { 'G', 'Git', 'Gdiffsplit', 'Gvdiffsplit' }, -- lazy-load on Git commands }, -- make sure these are registered
-    -- },
-    --
-    -- {
-    --     "ibhagwan/fzf-lua",
-    --     cmd = "FzfLua",
-    --     -- dependencies = { "nvim-tree/nvim-web-devicons" },
-    --     opts = {
-    --         winopts    = {
-    --             border   = "single",
-    --             preview  = {
-    --                 border = "single",
-    --             },
-    --             backdrop = 100,
-    --         },
-    --         files      = {
-    --             rg_opts = [[--files --hidden --glob !.git --glob !node_modules]]
-    --         },
-    --         grep       = {
-    --             rg_opts =
-    --             "--color=never --no-heading --with-filename --line-number --column --smart-case --glob !node_modules",
-    --         },
-    --         previewers = {
-    --             builtin = {
-    --
-    --                 syntax_limit_b = 1024 * 100, -- 100KB
-    --                 extensions = {
-    --                     ["jpg"] = { "chafa", "{file}" },
-    --                 },
-    --             }
-    --         }
-    --     }
-    -- },
+    {
+        "ibhagwan/fzf-lua",
+        cmd = "FzfLua",
+        -- dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            winopts    = {
+                border   = "single",
+                preview  = {
+                    border = "single",
+                },
+                backdrop = 100,
+            },
+            files      = {
+                rg_opts = [[--files --hidden --glob !.git --glob !node_modules]]
+            },
+            grep       = {
+                rg_opts =
+                "--color=never --no-heading --with-filename --line-number --column --smart-case --glob !node_modules",
+            },
+            previewers = {
+                builtin = {
+
+                    syntax_limit_b = 1024 * 100, -- 100KB
+                    extensions = {
+                        ["jpg"] = { "chafa", "{file}" },
+                    },
+                }
+            }
+        }
+    },
 }

@@ -21,10 +21,6 @@ keymap('', '[q', ':cprevious<CR>', ns)
 -- Oil
 keymap('n', '-', ':Oil<CR>', ns)
 
--- Find files and content
-keymap("n", "<C-p>", ":find ", nns)
-keymap("n", "<Leader>k", ':Rg ', nns)
-
 -- Resize
 keymap('n', '<C-S-Left>', ':vertical resize +1<CR>', ns)
 keymap('n', '<C-S-Right>', ':vertical resize -1<CR>', ns)
@@ -44,11 +40,11 @@ keymap("n", "<leader>cc", "gcc", { desc = "Toggle comment" })
 keymap("v", "<leader>cc", "gc", { desc = "Toggle comment" })
 
 -- FZF
--- keymap('n', '<C-p>', "<cmd>FzfLua files<CR>", ns)
--- keymap('n', '<Leader>k', "<cmd>FzfLua live_grep<CR>", ns)
--- keymap('n', '<Leader>K', '<cmd>FzfLua grep_cword<CR>', ns)
--- keymap('n', '<leader>B', '<cmd>FzfLua buffers<CR>', ns)
--- keymap('n', '<leader>M', '<cmd>FzfLua marks<CR>', ns)
+keymap('n', '<C-p>', "<cmd>FzfLua files<CR>", ns)
+keymap('n', '<Leader>k', "<cmd>FzfLua live_grep<CR>", ns)
+keymap('n', '<Leader>K', '<cmd>FzfLua grep_cword<CR>', ns)
+keymap('n', '<leader>B', '<cmd>FzfLua buffers<CR>', ns)
+keymap('n', '<leader>M', '<cmd>FzfLua marks<CR>', ns)
 
 -- FUGITIVE
 -- keymap('n', '<Leader>gs', ':G<CR>5j', ns)         -- Vim fugitive summary
