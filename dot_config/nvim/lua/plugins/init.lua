@@ -15,23 +15,18 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
-        event = "InsertEnter",
+        keys = {
+            { "<C-j>", function() require("copilot.suggestion").next() end, mode = "i" },
+        },
         config = function()
             local copilot = require("copilot")
-            local suggestion = require("copilot.suggestion")
-
             copilot.setup({
                 panel = { enabled = false },
                 suggestion = {
                     enabled = true,
-                    auto_trigger = false, -- não dispara sozinho
+                    auto_trigger = false,
                     keymap = {
-                        accept = "<C-l>", -- aceita a sugestão
-                        accept_word = false,
-                        accept_line = false,
-                        next = "<C-j>",
-                        prev = "<C-k>",
-                        dismiss = nil,
+                        accept = "<C-l>"
                     },
                 },
             })
