@@ -1,6 +1,7 @@
 local setKeymap = vim.keymap.set
 local keymap = vim.api.nvim_set_keymap
 local ns = { noremap = true, silent = true }
+local fzf_grep = require("utils.fzf_grep_by_file")
 
 -- General
 keymap('n', '<Leader>w', ':w<CR>', ns)
@@ -45,22 +46,7 @@ keymap('n', '<Leader>k', "<cmd>FzfLua live_grep<CR>", ns)
 -- keymap('n', '<Leader>K', '<cmd>FzfLua grep_cword<CR>', ns)
 keymap('n', '<leader>B', '<cmd>FzfLua buffers<CR>', ns)
 keymap('n', '<leader>M', '<cmd>FzfLua marks<CR>', ns)
-setKeymap("n", "<leader>K", function()
-    local ext = vim.fn.input("Extension (ex: go, js, lua): ")
-    if ext == "" then
-        return
-    end
-
-    local glob = string.format("*.%s", ext)
-
-    require("fzf-lua").live_grep({
-        cmd = string.format(
-            'rg --hidden --column --line-number --no-heading --color=always --smart-case --glob "%s"',
-            glob
-        ),
-        prompt = string.format("Rg (%s)> ", glob),
-    })
-end, { desc = "Live grep filtrado por extensão" })
+setKeymap("n", "<leader>K", fzf_grep.select_extension_live_grep, { desc = "Live grep com seletor dinâmico de extensão" })
 
 -- FUGITIVE
 -- keymap('n', '<Leader>gs', ':G<CR>5j', ns)         -- Vim fugitive summary
