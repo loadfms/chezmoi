@@ -43,10 +43,10 @@ keymap("v", "<leader>cc", "gc", { desc = "Toggle comment" })
 -- FZF
 keymap('n', '<C-p>', "<cmd>FzfLua files<CR>", ns)
 keymap('n', '<Leader>k', "<cmd>FzfLua live_grep<CR>", ns)
--- keymap('n', '<Leader>K', '<cmd>FzfLua grep_cword<CR>', ns)
+keymap('n', '<Leader>K', '<cmd>FzfLua grep_cword<CR>', ns)
 keymap('n', '<leader>B', '<cmd>FzfLua buffers<CR>', ns)
 keymap('n', '<leader>M', '<cmd>FzfLua marks<CR>', ns)
-setKeymap("n", "<leader>K", fzf_grep.select_extension_live_grep, { desc = "Live grep com seletor dinâmico de extensão" })
+setKeymap("n", "<leader>f", fzf_grep.select_extension_live_grep, { desc = "Live grep com seletor dinâmico de extensão" })
 
 -- FUGITIVE
 -- keymap('n', '<Leader>gs', ':G<CR>5j', ns)         -- Vim fugitive summary
