@@ -10,4 +10,9 @@ if [ -f ~/.config/secrets/open_ai ]; then
     export OPENAI_API_KEY="$OPENAI_API_KEY"
 fi
 
+if [ -f ~/.config/secrets/gemini_api_key ]; then
+    GEMINI_API_KEY=$(<~/.config/secrets/gemini_api_key)
+    export GEMINI_API_KEY="$GEMINI_API_KEY"
+fi
+
 export GOPRIVATE=github.com/AcordoCertoBR
