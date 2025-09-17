@@ -133,6 +133,7 @@ alias awslogs='aws_logs'
 alias ssm-gen='sh ~/scripts/ssm_gen.sh'
 alias ssm-get='sh ~/scripts/get_ssm.sh'
 alias reset-wifi='nmcli --ask connection up internet-5g'
+alias gemini='gemini --model gemini-2.5-flash'
 
 alias fzf="fzf --preview='chafa {}'"
 
