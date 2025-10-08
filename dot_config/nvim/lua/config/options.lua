@@ -17,7 +17,7 @@ opt.mouse = ''
 
 -- Editor
 opt.number = false
-opt.relativenumber = false
+opt.relativenumber = true
 opt.colorcolumn = ''
 opt.wrap = false
 opt.signcolumn = 'yes'

@@ -1,15 +1,17 @@
 return {
     -- Theme
-    {
-        "neanias/everforest-nvim",
-        version = false,
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("everforest").setup({
-            })
-        end,
-    },
+    -- {
+    --     "neanias/everforest-nvim",
+    --     version = false,
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require("everforest").setup({
+    --         })
+    --     end,
+    -- },
+
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
     -- Copilot (AI suggestions)
     {
