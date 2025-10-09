@@ -220,7 +220,7 @@ return {
                 backdrop = 100,
             },
             files      = {
-                rg_opts = [[--files --hidden --glob !.git --glob !node_modules]]
+                rg_opts = [[--files --hidden --glob !.git --glob !node_modules]],
             },
             grep       = {
                 rg_opts =
@@ -232,6 +232,7 @@ return {
                     syntax_limit_b = 1024 * 100, -- 100KB
                     extensions = {
                         ["jpg"] = { "chafa", "{file}" },
+                        ["png"] = { "chafa", "{file}" },
                     },
                 }
             }
