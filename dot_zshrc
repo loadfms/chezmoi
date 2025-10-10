@@ -53,11 +53,11 @@ directory() {
 
 # returns  if there are errors, nothing otherwise
 return_status() {
-   echo "%{$fg[red]%}%(?..)%{$reset_color%}"
+   echo "%{$fg[yellow]%}%(?..)%{$reset_color%}"
 }
 
 git_info(){
-    echo "%B%{$fg[red]%}$(_omz_git_prompt_info)%{$reset_color%}%b"
+    echo "%B%{$fg[yellow]%}$(_omz_git_prompt_info)%{$reset_color%}%b"
 }
 
 PROMPT='
@@ -68,7 +68,7 @@ $(directory) $(git_info)
 #if uname | rg -q "Linux"; then
     #PROMPT='
 #$(directory) $(git_info)
-#%{$fg[red]%}%B%b %{$reset_color%}'
+#%{$fg[yellow]%}%B%b %{$reset_color%}'
 #fi
 
 ###############################################################
