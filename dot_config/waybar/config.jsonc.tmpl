@@ -1,127 +1,109 @@
 {
-    //--------------------------------------------------------------------------------
-    // General
-    //--------------------------------------------------------------------------------
-    "layer": "top",
-    "position": "top",
-    "height": 36,
-    "spacing": 0,
-    "margin-top": 0,
-    "margin-left": 0,
-    "margin-bottom": 0,
-    "margin-right": 0,
-    //--------------------------------------------------------------------------------
-    // Left Modules
-    //--------------------------------------------------------------------------------
-    "modules-left": [
-        "custom/luck",
-        "clock",
-        "hyprland/workspaces"
-    ],
-    //--------------------------------------------------------------------------------
-    // Center Modules
-    //--------------------------------------------------------------------------------
-    "modules-center": [
-        "custom/kuwabara"
-    ],
-    //--------------------------------------------------------------------------------
-    // Right Modules
-    //--------------------------------------------------------------------------------
-    "modules-right": [
-        // "custom/music",
-        "pulseaudio",
-        "network",
-        "cpu",
-        "temperature",
-        "memory",
-        {{ if eq .chezmoi.hostname "archnote" }}
-            "battery"
-        {{ end }}
-    ],
-    //--------------------------------------------------------------------------------
-    // Left Configuration
-    //--------------------------------------------------------------------------------
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "disable-select-unfocused": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
-        }
-    },
-    "clock": {
-        "format": "{:%d-%m-%Y | %I:%M}",
-        "tooltip-format": "{:%A}",
-        "on-click": "galendae"
-    },
-    //--------------------------------------------------------------------------------
-    // Right Configuration
-    //--------------------------------------------------------------------------------
-    "memory": {
-        "interval": 1,
-        "format": "{}% "
-    },
-    "cpu": {
-        "format": "{usage:3}% ",
-        "interval": 1
-    },
-    "temperature": {
-        "interval": 1,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [
-            ""
-        ]
-    },
-    "network": {
-        "format-wifi": "",
-        "format-disconnected": "󱘖",
-        "tooltip-format": "{essid} {ipaddr}/{cidr} "
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume:3}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": [
-                " "
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/music": {
-        "format": "うた {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": {{ printf "\"playerctl metadata --format '{{ artist }} - {{ title }}'\"" }},
-        "on-click": "playerctl play-pause",
-        "max-length": 30
-    },
-    "custom/kuwabara": {
-        "exec": "echo 'くわばらくわばら'",
-        "interval": 999999,
-        "tooltip": false
-    },
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "format": "{capacity}% ",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} ⏳",
-        "interval": 30
-    }
+//--------------------------------------------------------------------------------
+// General
+//--------------------------------------------------------------------------------
+"layer": "top",
+"position": "left",
+"height": 0,
+"spacing": 0,
+"margin-top": 0,
+"margin-left": 0,
+"margin-bottom": 0,
+"margin-right": 0,
+//--------------------------------------------------------------------------------
+// Left Modules
+//--------------------------------------------------------------------------------
+"modules-left": [
+"clock"
+],
+//--------------------------------------------------------------------------------
+// Center Modules
+//--------------------------------------------------------------------------------
+"modules-center": [
+"hyprland/workspaces"
+],
+//--------------------------------------------------------------------------------
+// Right Modules
+//--------------------------------------------------------------------------------
+"modules-right": [
+// "custom/music",
+"pulseaudio",
+"network"
+// "cpu",
+// "temperature",
+// "memory",
+// "battery"
+],
+//--------------------------------------------------------------------------------
+// Left Configuration
+//--------------------------------------------------------------------------------
+"hyprland/workspaces": {
+"disable-scroll": true,
+"disable-select-unfocused": true,
+"all-outputs": true,
+"warp-on-scroll": false,
+"format": "{icon}",
+"format-icons": {
+"active": "",
+"default": ""
+}
+},
+"clock": {
+"format": "{:%I%n%M}",
+"on-click": "galendae",
+"tooltip-format": "{:%A %d %B %Y}",
+"tooltip": true,
+"timezone": "America/Sao_Paulo"
+},
+//--------------------------------------------------------------------------------
+// Right Configuration
+//--------------------------------------------------------------------------------
+"memory": {
+"interval": 1,
+"format": "{}% "
+},
+"cpu": {
+"format": "{usage:3}% ",
+"interval": 1
+},
+"temperature": {
+"interval": 1,
+"format": "{temperatureC}°C {icon}",
+"format-icons": [
+""
+]
+},
+"network": {
+"format-wifi": " ",
+"format-disconnected": "󱘖",
+"tooltip-format": "{essid} {ipaddr}/{cidr} "
+},
+"pulseaudio": {
+"format": "{icon}",
+"tooltip-format": "{volume}",
+"format-muted": " ",
+"format-icons": {
+"default": [
+" "
+]
+},
+"on-click": "pavucontrol"
+},
+"custom/kuwabara": {
+"exec": "echo 'くわばらくわばら'",
+"interval": 999999,
+"tooltip": false
+},
+"battery": {
+"bat": "BAT0",
+"states": {
+"warning": 20,
+"critical": 10
+},
+"format": "{capacity}% ",
+"format-charging": "{capacity}% ",
+"format-plugged": "{capacity}% ",
+"format-alt": "{time} ⏳",
+"interval": 30
+}
 }

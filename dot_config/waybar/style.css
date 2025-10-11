@@ -2,11 +2,10 @@
  * Colors 
  *-------------------------------------------------------------------------------*/
 
-@define-color bg           #2d353b;
-@define-color bg-alpha     rgba(45, 53, 59, 0.5);
-@define-color fg           #d3c6aa;
-@define-color accent       #a7c080;
-@define-color separator    #d3c6aa;
+@define-color bg           #2e3440;
+@define-color bg-alpha     rgba(46, 52, 64, 0.5);
+@define-color fg           #eceff4;
+@define-color accent       #5e81ac;
 
 /*--------------------------------------------------------------------------------
  * General 
@@ -14,13 +13,12 @@
 
 * {
   font-family: Maple Mono NF;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 window#waybar {
   background-color: @bg-alpha;
   color: @fg;
-  border:0;
 }
 
 /*--------------------------------------------------------------------------------
@@ -42,32 +40,39 @@ window#waybar {
  *-------------------------------------------------------------------------------*/
 
 #clock {
-  padding: 0 1em;
+  margin-top: 10px;
+  padding: 0;
+  font-weight: bold;
 }
 
 #workspaces {
   color: @fg;
-  padding-left: 1em;
+  padding: 0;
+  border: 0;
 }
 
 #workspaces button {
   color: @fg;
-  padding: 0 6px;
   border:0;
   border-radius: 0;
+  background: transparent; 
+  box-shadow: none;   
+  outline: none;     
 }
 
 #workspaces button:hover {
-  background-color: @accent;
-  color: #fff;
+  border:0;
+  background: transparent;
+  color: @fg;
 }
 
 #workspaces button.active {
+  border:0;
   color: @accent;
 }
 
 #workspaces button.active:hover {
-  background-color: @accent;
+  border:0;
   color: #fff;
 }
 
@@ -76,22 +81,15 @@ window#waybar {
  * Right Modules 
  *-------------------------------------------------------------------------------*/
 
-#cpu {
-  padding: 0 0.5em 0 1em;
-}
-
+#cpu,
 #temperature,
 #memory,
 #pulseaudio,
+#network,
 #battery{
-  padding-left: 1em;
-  padding-right: 0.5em;
-}
-
-#battery {
-  margin-right: 1em;
+    padding: 4px 0;
 }
 
 #network {
-  padding: 0 2em 0 1em;
+  margin-bottom: 10px;
 }
