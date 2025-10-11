@@ -1,4 +1,4 @@
-theme = catppuccin-mocha.conf
+theme = nord
 
 # Terminal behavior
 term = xterm-256color
@@ -6,7 +6,7 @@ copy-on-select = true
 
 # Font
 font-family = Maple Mono NF
-font-size = 15
+font-size = 12
 font-style-bold = Bold
 font-style-italic = Italic
 font-style-bold-italic = Italic
@@ -15,7 +15,7 @@ font-style-bold-italic = Italic
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
-cursor-color = cell-foreground
+# cursor-color = cell-foreground
 
 # Window
 window-padding-x = 20
