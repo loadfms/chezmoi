@@ -6,9 +6,10 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
-        keys = {
-            { "<C-j>", function() require("copilot.suggestion").next() end, mode = "i" },
-        },
+        event = { "InsertEnter" },
+        -- keys = {
+        --     { "<C-j>", function() require("copilot.suggestion").next() end, mode = "i" },
+        -- },
         config = function()
             local copilot = require("copilot")
             copilot.setup({
@@ -17,7 +18,8 @@ return {
                     enabled = true,
                     auto_trigger = false,
                     keymap = {
-                        accept = "<C-l>"
+                        accept = "<C-l>",
+                        next = "<C-j>",
                     },
                 },
             })
