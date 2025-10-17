@@ -6,10 +6,15 @@ copy-on-select = true
 
 # Font
 font-family = Maple Mono NF
-font-size = 12
 font-style-bold = Bold
 font-style-italic = Italic
 font-style-bold-italic = Italic
+
+{{ if or (eq .chezmoi.hostname "MacAcordo53") (eq .chezmoi.hostname "MacBookPro") }}
+size = 15.0
+{{ else }}
+font-size = 12
+{{ end }}
 
 # Cursor
 cursor-style = block
