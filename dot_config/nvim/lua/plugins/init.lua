@@ -1,6 +1,9 @@
 return {
     -- Theme
     { 'shaunsingh/nord.nvim' },
+    { 'p00f/alabaster.nvim' },
+
+
 
     -- Copilot (AI suggestions)
     {
