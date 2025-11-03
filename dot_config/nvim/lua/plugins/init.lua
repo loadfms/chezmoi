@@ -1,7 +1,5 @@
 return {
     -- Theme
-    { 'shaunsingh/nord.nvim' },
-
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
     -- Copilot (AI suggestions)
