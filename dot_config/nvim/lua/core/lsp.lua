@@ -11,7 +11,8 @@ lsp.enable({
     'rust_analyzer',
     'tailwindcss',
     'ts_ls',
-    'jdtls'
+    'jdtls',
+    'clojure_lsp',
 })
 
 -- Diagnostic configuration
