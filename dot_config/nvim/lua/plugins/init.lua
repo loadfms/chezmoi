@@ -15,17 +15,16 @@ return {
             copilot.setup({
                 panel = { enabled = false },
                 suggestion = {
-                    enabled = true,
-                    auto_trigger = false,
-                    keymap = {
-                        accept = "<C-l>",
-                        next = "<C-j>",
-                    },
+                    enabled = false,
+                },
+
+                filetypes = {
+                    markdown = true,
+                    help = true,
                 },
             })
         end,
     },
-
 
     -- Git Signs
     {
@@ -145,6 +144,7 @@ return {
     {
         'saghen/blink.cmp',
         event = "InsertEnter", -- Load when entering Insert mode
+        dependencies = { "fang2hou/blink-copilot" },
         version = '*',
         opts = {
             cmdline = { enabled = false },
@@ -192,8 +192,16 @@ return {
             },
 
             sources = {
-                default = { 'lsp', 'path', 'buffer' },
-                providers = {},
+                default = { 'lsp', 'path', 'buffer', 'copilot' },
+                providers = {
+
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
+                },
             },
         },
         opts_extend = { "sources.default" }
