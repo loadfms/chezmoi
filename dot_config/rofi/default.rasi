@@ -1,7 +1,7 @@
 * {
-    bg:            #2e3440;
-    fg:            #eceff4;
-    bg-alt:        #5e81ac;
+    bg:            #282828;
+    fg:            #dfbf8e;
+    bg-alt:        #e78a4e;
     accent:        #FF0000;
 
     borderradius:  0px;
