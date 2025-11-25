@@ -2,9 +2,9 @@
  * Colors 
  *-------------------------------------------------------------------------------*/
 
-@define-color bg           #282828;
+@define-color bg           #ebdbb2;
 @define-color bg-alpha     rgba(40, 40, 40, 0.5);
-@define-color fg           #dfbf8e;
+@define-color fg           #282828;
 @define-color accent       #e78a4e;
 
 /*--------------------------------------------------------------------------------
@@ -42,7 +42,6 @@ window#waybar {
 #clock {
   margin-top: 10px;
   padding: 0;
-  font-weight: bold;
 }
 
 #workspaces {

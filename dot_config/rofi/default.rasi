@@ -1,14 +1,14 @@
 * {
-    bg:            #282828;
-    fg:            #dfbf8e;
+    bg:            #ebdbb2;
+    fg:            #282828;
     bg-alt:        #e78a4e;
-    accent:        #FF0000;
+    accent:        #e78a4e;
 
     borderradius:  0px;
     bordersize:    1px;
     bordercolor:   @bg-alt;
 
-    highlight:     #FFFFFF;
+    highlight:     #282828;
 
     width: 600;
     font: "Maple Mono NF 10";
