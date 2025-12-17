@@ -183,20 +183,6 @@ hex2str() {
   echo "$1" | xxd -r -p
 }
 
-shared() {
-  MOUNT_POINT="/mnt/shared"
-  REMOTE="//192.168.15.61/Shared"
-  CREDS="/home/load/.smbcredentials"
-  OPTS="credentials=$CREDS,vers=3.1.1,uid=1000,gid=1000,rw,soft,iocharset=utf8"
-
-  if ! mountpoint -q "$MOUNT_POINT"; then
-    echo "🔌 Montando Shared..."
-    sudo mount -t cifs "$REMOTE" "$MOUNT_POINT" -o "$OPTS" || return 1
-  fi
-
-  cd "$MOUNT_POINT" || return 1
-}
-
 # improve paste speed
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
