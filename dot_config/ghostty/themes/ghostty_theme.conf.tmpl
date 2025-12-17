@@ -1,0 +1,28 @@
+{{- $theme := index .themes .theme -}}
+
+palette = 0={{ $theme.colors.black }}
+palette = 1={{ $theme.colors.red }}
+palette = 2={{ $theme.colors.green }}
+palette = 3={{ $theme.colors.yellow }}
+palette = 4={{ $theme.colors.blue }}
+palette = 5={{ $theme.colors.magenta }}
+palette = 6={{ $theme.colors.cyan }}
+palette = 7={{ $theme.colors.white }}
+
+palette = 8={{ $theme.colors.gray }}
+palette = 9={{ $theme.colors.red }}
+palette = 10={{ $theme.colors.green }}
+palette = 11={{ $theme.colors.yellow }}
+palette = 12={{ $theme.colors.blue }}
+palette = 13={{ $theme.colors.magenta }}
+palette = 14={{ $theme.colors.cyan }}
+palette = 15={{ $theme.colors.white }}
+
+background = {{ trimPrefix "#" $theme.colors.bg }}
+foreground = {{ trimPrefix "#" $theme.colors.fg }}
+
+cursor-color = {{ trimPrefix "#" $theme.colors.fg }}
+cursor-text = {{ trimPrefix "#" $theme.colors.bg }}
+
+selection-background = {{ trimPrefix "#" $theme.colors.gray }}
+selection-foreground = {{ trimPrefix "#" $theme.colors.fg }}
