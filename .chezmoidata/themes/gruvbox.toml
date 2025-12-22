@@ -1,3 +1,7 @@
+[themes.gruvbox.nvim]
+colorscheme = "gruvbox"
+plugin = "ellisonleao/gruvbox.nvim"
+
 [themes.gruvbox.colors]
 # Base
 bg = "#282828"
