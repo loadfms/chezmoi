@@ -1,11 +1,12 @@
+{{- $theme := index .themes .theme -}}
+
 /*--------------------------------------------------------------------------------
  * Colors 
  *-------------------------------------------------------------------------------*/
 
-@define-color bg           #ebdbb2;
-@define-color bg-alpha     rgba(40, 40, 40, 0.5);
-@define-color fg           #282828;
-@define-color accent       #e78a4e;
+@define-color bg           {{ $theme.colors.bg }};
+@define-color fg           {{ $theme.colors.fg }};
+@define-color accent       {{ $theme.colors.yellow }};
 
 /*--------------------------------------------------------------------------------
  * General 
@@ -19,6 +20,7 @@
 window#waybar {
   background-color: @bg;
   color: @fg;
+  opacity: 0.95;
 }
 
 /*--------------------------------------------------------------------------------
@@ -31,8 +33,8 @@ window#waybar {
   border-top: 0;
   border-bottom: 0;
 }
-.modules-left { }
 
+.modules-left { }
 .modules-right { }
 
 /*--------------------------------------------------------------------------------
@@ -52,29 +54,28 @@ window#waybar {
 
 #workspaces button {
   color: @fg;
-  border:0;
+  border: 0;
   border-radius: 0;
-  background: transparent; 
-  box-shadow: none;   
-  outline: none;     
+  background: transparent;
+  box-shadow: none;
+  outline: none;
 }
 
 #workspaces button:hover {
-  border:0;
+  border: 0;
   background: transparent;
   color: @fg;
 }
 
 #workspaces button.active {
-  border:0;
+  border: 0;
   color: @accent;
 }
 
 #workspaces button.active:hover {
-  border:0;
-  color: #fff;
+  border: 0;
+  color: #ffffff;
 }
-
 
 /*--------------------------------------------------------------------------------
  * Right Modules 
@@ -85,8 +86,8 @@ window#waybar {
 #memory,
 #pulseaudio,
 #network,
-#battery{
-    padding: 4px 0;
+#battery {
+  padding: 4px 0;
 }
 
 #network {
