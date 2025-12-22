@@ -24,3 +24,8 @@ chezmoi init loadfms/chezmoi
 chezmoi diff         # mostra diferenças
 chezmoi apply        # aplica quando estiver pronto
 ```
+
+## Para selecionar o tema:
+```sh
+change-theme gruvbox
+```
