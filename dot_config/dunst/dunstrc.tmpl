@@ -1,0 +1,42 @@
+{{- $theme := index .themes .theme -}}
+
+[global]
+    font = Maple Mono NF 10
+    allow_markup = yes
+    format = "<b>%s %p</b>\n%b"
+    sort = yes
+    indicate_hidden = true
+    idle_threshold = 0
+    width = 400
+    alignment = left
+    show_age_threshold = 60
+    sticky_history = yes
+    follow = mouse
+    word_wrap = yes
+    separator_height = 1
+    horizontal_padding = 5
+    separator_color = "{{ $theme.colors.gray }}"
+    monitor = 0
+    frame_width = 1
+
+[urgency_low]
+    background = "{{ $theme.colors.black }}"
+    foreground = "{{ $theme.colors.fg }}"
+    frame_color = "{{ $theme.colors.gray }}"
+    timeout = 5
+    format = "<b><span color='{{ $theme.colors.blue }}'>%s</span></b>\n%b"
+
+[urgency_normal]
+    background = "{{ $theme.colors.black }}"
+    foreground = "{{ $theme.colors.fg }}"
+    frame_color = "{{ $theme.colors.gray }}"
+    timeout = 10
+    format = "<b><span color='{{ $theme.colors.green }}'>%s</span></b>\n%b"
+
+[urgency_critical]
+    background = "{{ $theme.colors.black }}"
+    foreground = "{{ $theme.colors.fg }}"
+    frame_color = "{{ $theme.colors.gray }}"
+    highlight = "{{ $theme.colors.red }}"
+    timeout = 5
+    format = "<b><span color='{{ $theme.colors.red }}'>%s</span></b>\n%b"

@@ -185,7 +185,7 @@ hex2str() {
 
 change-theme() {
   if [[ -z "$1" ]]; then
-    echo "Uso: change-theme <nome-do-theme>"
+    echo "usage: change-theme <theme-name>"
     return 1
   fi
 
@@ -201,7 +201,11 @@ theme = "$theme"
 EOF
 
   chezmoi apply
-  echo "Theme do chezmoi definido para: $theme"
+  killall dunst || dunst &
+  killall waybar || waybar &
+  hyprctl reload
+
+  echo "Theme applied: $theme"
 }
 
 # improve paste speed
