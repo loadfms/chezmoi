@@ -1,6 +1,13 @@
 return {
-    -- Theme
+    -- Themes
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        lazy = false,
+        priority = 1000,
+    },
 
     -- Copilot (AI suggestions)
     {
