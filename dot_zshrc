@@ -183,6 +183,27 @@ hex2str() {
   echo "$1" | xxd -r -p
 }
 
+change-theme() {
+  if [[ -z "$1" ]]; then
+    echo "Uso: change-theme <nome-do-theme>"
+    return 1
+  fi
+
+  local theme="$1"
+  local config_dir="$HOME/.config/chezmoi"
+  local config_file="$config_dir/chezmoi.toml"
+
+  mkdir -p "$config_dir"
+
+  cat > "$config_file" <<EOF
+[data]
+theme = "$theme"
+EOF
+
+  chezmoi apply
+  echo "Theme do chezmoi definido para: $theme"
+}
+
 # improve paste speed
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
