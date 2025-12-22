@@ -1,14 +1,16 @@
+{{- $theme := index .themes .theme -}}
+
 * {
-    bg:            #ebdbb2;
-    fg:            #282828;
-    bg-alt:        #e78a4e;
-    accent:        #e78a4e;
+    bg:            {{ $theme.colors.bg }};
+    fg:            {{ $theme.colors.fg }};
+    bg-alt:        {{ $theme.colors.yellow }};
+    accent:        {{ $theme.colors.yellow }};
 
     borderradius:  0px;
     bordersize:    1px;
     bordercolor:   @bg-alt;
 
-    highlight:     #282828;
+    highlight:     {{ $theme.colors.black }};
 
     width: 600;
     font: "Maple Mono NF 10";
