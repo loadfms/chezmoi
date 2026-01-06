@@ -1,0 +1,21 @@
+[themes.rose-pine.nvim]
+colorscheme = "rose-pine"
+plugin = "rose-pine/neovim"
+
+[themes.rose-pine.colors]
+# Base
+bg = "#191724"
+fg = "#e0def4"
+
+# Normal colors
+black   = "#26233a"
+red     = "#eb6f92"
+green   = "#31748f"
+yellow  = "#f6c177"
+blue    = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan    = "#ebbcba"
+white   = "#e0def4"
+
+# Bright / misc
+gray = "#6e6a86"
