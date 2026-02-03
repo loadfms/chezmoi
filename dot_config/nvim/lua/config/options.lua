@@ -21,6 +21,7 @@ opt.relativenumber = true
 opt.colorcolumn = ''
 opt.wrap = false
 opt.signcolumn = 'yes'
+opt.numberwidth = 4
 opt.showmatch = true
 opt.showmode = false
 opt.foldmethod = 'marker'
