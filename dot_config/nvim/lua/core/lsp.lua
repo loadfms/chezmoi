@@ -22,7 +22,7 @@ diagnostic.config({
     underline = true,
     update_in_insert = false,
     severity_sort = true,
-    float = { border = "solid" },
+    float = { border = "single" },
     signs = {
         text = {
             [diagnostic.severity.ERROR] = "󰅚 ",

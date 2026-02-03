@@ -10,10 +10,10 @@
     bordersize:    1px;
     bordercolor:   @bg-alt;
 
-    highlight:     {{ $theme.colors.black }};
+    highlight:     none;
 
     width: 600;
-    font: "Maple Mono NF 10";
+    font: "FiraCode Nerd Font Mono 10";
 }
 
 element-text,
@@ -43,9 +43,9 @@ inputbar {
 }
 
 prompt {
-    background-color: @highlight;
+    background-color: @bg;
     padding: 6px;
-    text-color: @bg;
+    text-color: @fg;
     border-radius: 3px;
     margin: 20px 0px 0px 20px;
 }
@@ -82,8 +82,8 @@ element-icon {
 }
 
 element selected {
-    background-color: @bg-alt;
-    text-color: @highlight;
+    background-color: @fg;
+    text-color: @bg;
 }
 
 mode-switcher {

@@ -1,0 +1,21 @@
+[themes.etint.nvim]
+colorscheme = "etint"
+plugin = "loadfms/etint.nvim"
+
+[themes.etint.colors]
+# Base
+bg = "#f1edde"
+fg = "#26262a"
+
+# Normal colors (monotone mapping)
+black   = "#1f1f23"  # deep
+red     = "#3a3a3f"  # muted
+green   = "#2f2f34"  # fg2
+yellow  = "#4a4a50"  # fg4
+blue    = "#323238"  # fg3
+magenta = "#3a3a3f"  # muted
+cyan    = "#323238"  # fg3
+white   = "#26262a"  # fg
+
+# Bright / misc
+gray = "#5a5a60"     # warn
