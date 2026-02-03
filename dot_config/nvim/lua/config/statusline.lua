@@ -30,7 +30,7 @@ end
 -- Function to set up the statusline
 function M.setup()
     vim.o.statusline = table.concat({
-        "%#Title# ", "%{v:lua.require'config.statusline'.get_mode()} ",
+        "%#ModeMsg# ", "%{v:lua.require'config.statusline'.get_mode()} ",
         "%#StatusLine# %f%{&modified ? ' ●' : ''}%{&readonly ? ' ' : ''}%{&buftype == 'nofile' ? ' 󰊠' : ''} ",
         "%=", -- <- everything before this will be left aligned
         -- "%=%#StatusLine# %{v:lua.require'config.statusline'.get_filetype_icon()} ",
