@@ -26,7 +26,8 @@ source = ~/.config/hypr/colors.conf
 {{ if eq .chezmoi.hostname "archnote" }}
 monitor=eDP-1,1920x1080@60,0x0,1
 {{ else if eq .chezmoi.hostname "archlinux" }}
-monitor=DP-1,3840x2160@60,auto,auto
+#monitor=DP-1,3840x2160@60,auto,auto
+monitor=DP-1,3840x2160@60,auto,1
 {{ else }}
 monitor=*,preferred,auto,auto
 {{ end }}
