@@ -87,8 +87,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         event = { "BufReadPost", "BufNewFile" },
         build = ':TSUpdate',
-        config = function()
-            require 'nvim-treesitter.configs'.setup {
+            opts = {
                 ensure_installed = { "go", "lua" },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -115,34 +114,38 @@ return {
                     -- Instead of true it can also be a list of languages
                     additional_vim_regex_highlighting = false,
                 },
-            }
-        end,
-    },
+            },
+            init = function()
+                -- garante TS para buffers já abertos no startup
+                vim.api.nvim_create_autocmd("BufEnter", {
+                    callback = function()
+                        pcall(vim.treesitter.start)
+                    end,
+                })
+            end,
+        },
 
     -- Formatter
     {
         'stevearc/conform.nvim',
 
         event = "BufWritePre",
-        opts = {},
-        config = function()
-            require("conform").setup({
-                formatters_by_ft = {
-                    javascript = { "prettier", stop_after_first = true },
-                    scss = { "prettier", stop_after_first = true },
-                    typescriptreact = { "prettier", stop_after_first = true },
-                    go = { "goimports", "gofmt" },
-                    rust = { "rustfmt" },
-                    python = { "black" },
-                    cpp = { "clang-formatter" },
-                    yuck = { "indent" },
-                },
-                format_on_save = {
-                    lsp_format = "fallback",
-                    timeout_ms = 5000,
-                },
-            })
-        end
+        opts = {
+            formatters_by_ft = {
+              javascript = { "prettier", stop_after_first = true },
+              scss = { "prettier", stop_after_first = true },
+              typescriptreact = { "prettier", stop_after_first = true },
+              go = { "goimports", "gofmt" },
+              rust = { "rustfmt" },
+              python = { "black" },
+              cpp = { "clang-format" },
+              yuck = { "indent" },
+            },
+            format_on_save = {
+              lsp_format = "fallback",
+              timeout_ms = 5000,
+            },
+        },
     },
     {
         'saghen/blink.cmp',
