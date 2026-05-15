@@ -10,7 +10,7 @@ font-style-bold = Bold
 font-style-italic = Italic
 font-style-bold-italic = Italic
 
-{{ if or (eq .chezmoi.hostname "MacAcordo53") (eq .chezmoi.hostname "MacBookPro") }}
+{{ if or (hasPrefix "MacAcordo" .chezmoi.hostname) (eq .chezmoi.hostname "MacBookPro") }}
 font-size = 15.0
 {{ else }}
 font-size = 12
