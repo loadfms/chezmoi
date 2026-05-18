@@ -52,9 +52,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light agkozak/zsh-z
 
-# AWS CLI completion
-complete -C aws_completer aws
-
 ###############################################################
 # => Fzf
 ###############################################################
