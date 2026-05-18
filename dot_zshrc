@@ -47,10 +47,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light agkozak/zsh-z
+zinit ice wait"0" lucid; zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice wait"0" lucid; zinit light zsh-users/zsh-autosuggestions
+zinit ice wait"0" lucid; zinit light zsh-users/zsh-completions
+zinit ice wait"0" lucid; zinit light agkozak/zsh-z
 
 ###############################################################
 # => Fzf
@@ -169,7 +169,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 #pokemon-colorscripts -r 1 --no-title
 
 source ~/scripts/set_secrets.sh
-neofetch
+fastfetch
 
 # pnpm
 export PNPM_HOME="/home/load/.local/share/pnpm"
