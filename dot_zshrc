@@ -8,6 +8,30 @@ export GOPATH="$HOME/go"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export EDITOR="nvim"
 
+# modo vi na linha de comando (explícito: o /etc/zshrc do macOS chama bindkey antes do EDITOR existir e cairia em emacs)
+bindkey -v
+KEYTIMEOUT=20                                   # 0.2s pro Esc responder rápido sem quebrar setas
+bindkey -v '^?' backward-delete-char            # backspace apaga além do ponto onde entrou em inserção
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+
+# abre a linha atual no nvim: Ctrl+x Ctrl+e (como no bash) ou Esc v
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M viins '^X^E' edit-command-line
+bindkey -M vicmd '^X^E' edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+
+# cursor mostra o modo: barra em inserção, bloco em normal
+function zle-keymap-select zle-line-init {
+  if [[ $KEYMAP == vicmd ]]; then print -n '\e[2 q'; else print -n '\e[6 q'; fi
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+function zle-line-finish { print -n '\e[2 q' }
+zle -N zle-line-finish
+
 # history: grava na hora e compartilha entre panes do tmux (default do macOS sobrescreve e trunca em 1000)
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
