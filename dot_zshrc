@@ -23,6 +23,15 @@ bindkey -M viins '^X^E' edit-command-line
 bindkey -M vicmd '^X^E' edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
+# cor do símbolo do prompt por modo: verde em inserção, amarelo em normal
+function zle-keymap-select {
+  VI_COLOR=$([[ $KEYMAP == vicmd ]] && echo yellow || echo green)
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+function zle-line-init { VI_COLOR=green; zle reset-prompt }
+zle -N zle-line-init
+
 # history: grava na hora e compartilha entre panes do tmux (default do macOS sobrescreve e trunca em 1000)
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -64,7 +73,7 @@ git_info() {
 
 PROMPT='
 $(directory) $(git_info)
-%{$fg[255]%}%B %b %{$reset_color%}'
+%F{${VI_COLOR:-green}}%B %b%f '
 
 ###############################################################
 # => Plugins (zinit)
