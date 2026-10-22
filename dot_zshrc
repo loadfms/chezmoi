@@ -7,9 +7,6 @@ export TERM="xterm-256color"
 export GOPATH="$HOME/go"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export EDITOR="nvim"
-# Claude Code: só roda do mouse; o arrastar volta pro tmux/Ghostty, que forçam a cor do texto na seleção
-# (a seleção interna do Claude Code usa ansi:blue de fundo e some com texto esmaecido)
-export CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1
 
 # history: grava na hora e compartilha entre panes do tmux (default do macOS sobrescreve e trunca em 1000)
 HISTFILE="$HOME/.zsh_history"
