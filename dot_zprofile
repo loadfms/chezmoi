@@ -3,4 +3,12 @@ if [[ -z "$WAYLAND_DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]] && command -v sta
 fi
 
 # Homebrew na frente do PATH (sem isso o path_helper do macOS deixa /usr/bin antes e o git da Apple ganha)
-[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+# (saída do `brew shellenv` copiada estática: o eval sobe o Ruby do brew e custa ~35ms por login)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  export HOMEBREW_PREFIX="/opt/homebrew"
+  export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+  export HOMEBREW_REPOSITORY="/opt/homebrew"
+  fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+fi

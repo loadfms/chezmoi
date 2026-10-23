@@ -147,7 +147,7 @@ aws_logs() {
     fi
 }
 
-if uname | rg -q "Linux"; then
+if [[ $OSTYPE == linux* ]]; then  # variável do shell, sem processo
     alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | xclip -selection clipboard"
 fi
 
@@ -207,12 +207,15 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 #pokemon-colorscripts -r 1 --no-title
 
 source ~/scripts/set_secrets.sh
-fastfetch
+[[ -z $TMUX ]] && fastfetch   # banner só fora do tmux (não a cada pane)
 
-# pnpm
-export PNPM_HOME="/home/load/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# pnpm (só entra no PATH se o diretório existir nesta máquina)
+PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+if [[ -d $PNPM_HOME ]]; then
+  export PNPM_HOME
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+fi
 # pnpm end
