@@ -157,15 +157,6 @@ git_release() {
     git -C . tag $new_tag && git -C . push origin $new_tag
 }
 
-set_pokemon_logo() {
-    if [ -z "$1" ]; then
-        echo "Usage: set_pokemon_logo <pokemon_name>"
-        return 1
-    fi
-    pokemon-colorscripts --name "$1" --no-title > ~/.config/fastfetch/logo.txt
-    echo "Pokemon '$1' set as Fastfetch logo!"
-}
-
 hex2str() {
   echo "$1" | xxd -r -p
 }
@@ -200,13 +191,7 @@ autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
-###############################################################
-# => Window top
-###############################################################
-#pokemon-colorscripts -r 1 --no-title
-
 source ~/scripts/set_secrets.sh
-[[ -z $TMUX ]] && fastfetch   # banner só fora do tmux (não a cada pane)
 
 # pnpm (só entra no PATH se o diretório existir nesta máquina)
 PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
