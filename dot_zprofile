@@ -1,3 +1,6 @@
 if [[ -z "$WAYLAND_DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]] && command -v start-hyprland > /dev/null; then
   exec start-hyprland
 fi
+
+# Homebrew na frente do PATH (sem isso o path_helper do macOS deixa /usr/bin antes e o git da Apple ganha)
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
