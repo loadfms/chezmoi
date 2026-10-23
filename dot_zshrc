@@ -106,15 +106,13 @@ alias git-lastag="git describe --abbrev=0 --tags"
 alias git-tag="git_release"
 alias git-revert="sh ~/scripts/git-revert.sh"
 alias vim=nvim
-alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | pbcopy -selection clipboard"
+alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | pbcopy"
 alias dotsync="chezmoi re-add && git -C ~/.local/share/chezmoi/ add . && git -C ~/.local/share/chezmoi/ commit -m 'feat: update configs' && git -C ~/.local/share/chezmoi/ push origin main"
 alias ls="eza --icons -ll --sort=type --header"
 alias ps="procs"
 alias mypr="sh ~/scripts/myprs.sh"
 alias rgf='rg --files --no-ignore --hidden | rg -i '
-alias dockerstart='sudo systemctl start docker.service'
 alias prj='list_projects'
-alias mini-chrome="google-chrome-stable --new-window --app="
 alias cgpt='git commit -m "$(commitgpt)"'
 alias awslogs='aws_logs'
 alias ssm-gen='sh ~/scripts/ssm_gen.sh'
@@ -146,7 +144,10 @@ aws_logs() {
     fi
 }
 
-if [[ $OSTYPE == linux* ]]; then  # variável do shell, sem processo
+# só no Linux (o Mac usa pbcopy, e não tem systemd nem google-chrome-stable)
+if [[ $OSTYPE == linux* ]]; then
+    alias dockerstart='sudo systemctl start docker.service'
+    alias mini-chrome="google-chrome-stable --new-window --app="
     alias cpf="curl https://www.4devs.com.br/ferramentas_online.php --data-raw 'acao=gerar_cpf&pontuacao=S&cpf_estado=' -s | cut -d '%' -f 1 | xclip -selection clipboard"
 fi
 
@@ -179,9 +180,11 @@ theme = "$theme"
 EOF
 
   chezmoi apply
-  killall dunst || dunst &
-  killall waybar || waybar &
-  hyprctl reload
+  if [[ $OSTYPE == linux* ]]; then
+    killall dunst || dunst &
+    killall waybar || waybar &
+    hyprctl reload
+  fi
 
   echo "Theme applied: $theme"
 }
