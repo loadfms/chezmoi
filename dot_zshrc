@@ -3,7 +3,6 @@ if [[ -z "$TMUX" && "$TERM_PROGRAM" == "ghostty" && -z "$NO_TMUX" ]] && command 
   exec tmux new -A -s TMUX
 fi
 
-export TERM="xterm-256color"
 export GOPATH="$HOME/go"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export EDITOR="nvim"
