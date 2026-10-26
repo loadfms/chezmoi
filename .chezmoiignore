@@ -1,2 +1,26 @@
 README.md
 .config/nvim/lazy-lock.json
+
+# Desktop/WM (legado do Arch; no Omarchy já vem pronto). Fica no repo, mas não é aplicado.
+.config/cava
+.config/dunst
+.config/galendae
+.config/hypr
+.config/neofetch
+.config/rofi
+.config/vifm
+.config/waybar
+
+# Scripts que não são usados pelo zsh/tmux
+scripts/packages
+scripts/emoji
+scripts/animedoro.sh
+scripts/bars.sh
+scripts/colors.sh
+scripts/fade.sh
+scripts/imahero.sh
+scripts/lock-screeen.sh
+scripts/polybar_launch.sh
+scripts/revive-packages.sh
+scripts/sanity-check-wifi.sh
+scripts/wifight.sh

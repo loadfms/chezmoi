@@ -1,8 +1,6 @@
-{{- $theme := index .themes .theme -}}
-
 return {
     -- Themes
-    { "{{ $theme.nvim.plugin }}", priority = 1000, name = "{{ $theme.nvim.colorscheme }}",},
+    { "catppuccin/nvim", priority = 1000, name = "catppuccin",},
 
     -- Copilot (AI suggestions)
     {
