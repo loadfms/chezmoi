@@ -1,6 +1,6 @@
 return {
     -- Themes
-    { "catppuccin/nvim", priority = 1000, name = "catppuccin",},
+    { "catppuccin/nvim", priority = 1000, name = "catppuccin", opts = { transparent_background = true } },
 
     -- Copilot (AI suggestions)
     {
